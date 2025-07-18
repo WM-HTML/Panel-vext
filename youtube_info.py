@@ -2,7 +2,7 @@ import requests
 import sys
 import re
 
-API_KEY = 'AIzaSyD-EXAMPLE-APIKEY-FOR-TESTING-1234567890'  # API de ejemplo, no válida
+API_KEY = 'AIzaSyD3ciowjk5mWhO3xhXPIaPIL-I6BFIUdZk'  # API de ejemplo, no válida
 
 def extraer_video_id(url):
     patrones = [
