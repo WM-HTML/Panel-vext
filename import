@@ -5,12 +5,17 @@ if [ "$1" = "vext" ]; then
         youtube)
             echo "📦 Descargando youtube_info.py desde GitHub..."
             mkdir -p ~/vext/youtube
-            cd ~/vext/youtube
+            cd ~/vext/youtube || { echo "❌ Error al entrar a la carpeta"; exit 1; }
 
-            wget -q https://raw.githubusercontent.com/WM-HTML/Panel-vext/refs/heads/main/youtube_info.py -O youtube_info.py && echo "✅ Archivo descargado: youtube_info.py"
+            if wget -q https://raw.githubusercontent.com/WM-HTML/Panel-vext/refs/heads/main/youtube_info.py -O youtube_info.py; then
+                echo "✅ Archivo descargado: youtube_info.py"
+            else
+                echo "❌ Error al descargar youtube_info.py"
+                exit 1
+            fi
 
             echo ""
-            echo "▶️ Para ejecutar, usa: python3 youtube_info.py"
+            echo "▶️ Para ejecutar, usa: python3 ~/vext/youtube/youtube_info.py"
             ;;
         *)
             echo "⚠️ Comando desconocido: $2"
