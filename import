@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ "$1" = "vext" ]; then
+    case "$2" in
+        youtube)
+            echo "📦 Descargando youtube_info.py desde GitHub..."
+            mkdir -p ~/vext/youtube
+            cd ~/vext/youtube
+
+            wget -q https://raw.githubusercontent.com/WM-HTML/Panel-vext/refs/heads/main/youtube_info.py -O youtube_info.py && echo "✅ Archivo descargado: youtube_info.py"
+
+            echo ""
+            echo "▶️ Para ejecutar, usa: python3 youtube_info.py"
+            ;;
+        *)
+            echo "⚠️ Comando desconocido: $2"
+            ;;
+    esac
+else
+    echo "❌ Uso correcto: import vext youtube"
+fi
